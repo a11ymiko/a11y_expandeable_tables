@@ -14,10 +14,17 @@
                 white-space: nowrap;
                 border-width: 0; 
             }
+            
+            #narrow{
+                max-width: 200px;
+                max-height: 200px;
+                overflow: scroll;
+            }
         </style>
     </head>
     <body>
-        <h3 id="interference">Zależności na poziomie produktu</h3>
+        <main>
+        <h1 id="interference">Zależności na poziomie produktu</h3>
         <table aria-labelledby="interference">
             <tr>
             <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
@@ -89,6 +96,81 @@
             <td>Cell 7</td>
             </tr>
         </table>
+
+        <div id="narrow">
+        <table aria-labelledby="interference">
+            <tr>
+            <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+            <th>Apo D3 Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+            <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+            <th>Mollers Forte tran<button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+            </tr>
+            <tr id="table_row">
+            <td>Apo D3 Forte<button id="button_0" aria-expanded="false"><span aria-hidden="true">⬇️</span><span class="sr-only">Szczegóły</span></button>
+                <table class="table" style="display:none;">
+                    <tr>
+                        <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Apo D3 Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                    </tr>
+                <tr>
+                    <td>Apo D3 Forte</td>
+                    <td>cell2</td>
+                    <td>cell3</td>
+                </tr>
+                <tr>
+                    <td>Apo D3 Forte</td>
+                    <td>cell4</td>
+                    <td>cell5</td>
+                </tr>
+                </table>
+            </td>
+
+            <td>Mollers Forte<button onclick="showNewTable()" id="button_1" aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
+                <table id="table_1" style="display:none;">
+                    <tr>
+                        <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Apo D3 Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                    </tr>
+                <tr>
+                    <td>Apo D3 Forte</td>
+                    <td>cell2</td>
+                    <td>cell3</td>
+                </tr>
+                </table>
+            </td>
+
+            <td>Mollers Forte tran<button aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
+                    <table class="table" style="display:none;">
+                    <tr>
+                        <td>Apo D3 Forte</td>
+                        <td>cell2</td>
+                        <td>cell3</td>
+                    </tr>
+                    </table>
+            </td>
+
+            <td>Cell 4<button aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
+                    <table class="table" style="display:none;">
+                    <tr>
+                        <td>Apo D3 Forte</td>
+                        <td>cell2</td>
+                        <td>cell3</td>
+                    </tr>
+                    </table>
+            </td>
+
+            </tr>
+            <tr>
+            <td>Mollers Forte</td>
+            <td>cell5</td>
+            <td>cell6</td>
+            <td>Cell 7</td>
+            </tr>
+        </table>
+    </div>
+        </main>
 
         <script>
             function showNewTable(){
