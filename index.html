@@ -17,12 +17,13 @@
         </style>
     </head>
     <body>
-        <table >
+        <h3 id="interference">Zależności na poziomie produktu</h3>
+        <table aria-labelledby="interference">
             <tr>
             <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
             <th>Apo D3 Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
             <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
-            <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+            <th>Mollers Forte tran<button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
             </tr>
             <tr id="table_row">
             <td>Apo D3 Forte<button id="button_0" aria-expanded="false"><span aria-hidden="true">⬇️</span><span class="sr-only">Szczegóły</span></button>
@@ -45,8 +46,13 @@
                 </table>
             </td>
 
-            <td>cell2<button id="button_1" aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
-                <table class="table" style="display:none;">
+            <td>Mollers Forte<button onclick="showNewTable()" id="button_1" aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
+                <table id="table_1" style="display:none;">
+                    <tr>
+                        <th>Nazwa produktu <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Apo D3 Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                        <th>Mollers Forte <button><span aria-hidden="true">↕️</span><span class="sr-only">Sortuj malejąco</span></button></th>
+                    </tr>
                 <tr>
                     <td>Apo D3 Forte</td>
                     <td>cell2</td>
@@ -55,7 +61,7 @@
                 </table>
             </td>
 
-            <td>cell3<button aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
+            <td>Mollers Forte tran<button aria-expanded="false">⬇️<span class="sr-only">Szczegóły</span></button>
                     <table class="table" style="display:none;">
                     <tr>
                         <td>Apo D3 Forte</td>
@@ -85,6 +91,22 @@
         </table>
 
         <script>
+            function showNewTable(){
+                const btn = document.getElementById("button_1");
+                const tbl = document.getElementById("table_1");
+
+                let expanded_st = btn.getAttribute("aria-expanded");
+
+                if(expanded_st === "true") {
+                    btn.setAttribute("aria-expanded", 'false');
+                    tbl.style.display = "none";
+                }
+                else {
+                    btn.setAttribute("aria-expanded", 'true');
+                    tbl.style.display = "block"; 
+                }
+            }
+
             const table_row = document.getElementById("table_row");
             const tds = table_row.getElementsByTagName("td");
         
